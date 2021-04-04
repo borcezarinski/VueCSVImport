@@ -35,8 +35,8 @@
                         <tr v-for="(field, key) in fieldsToMap" :key="key">
                             <td>{{ field.label }}</td>
                             <td>
-                                <select class="form-control" v-model="field.label">
-                                    <option v-for="(column, key) in firstRow" :key="key" :value="column">{{ column }}</option>
+                                <select class="form-control" v-model="map[field.key]" :value="field.column">
+                                    <option v-for="(column, key) in firstRow" :key="key" :value="key">{{ column }}</option>
                                 </select>
                             </td>
                         </tr>
@@ -187,6 +187,8 @@
                 this.readFile((output) => {
                     _this.sample = _.get(Papa.parse(output, { preview: 2, skipEmptyLines: true }), "data");
                     _this.csv = _.get(Papa.parse(output, { skipEmptyLines: true }), "data");
+                    console.log("CSV Loaded");
+                    console.log(_this.csv);
                 });
                 console.log("CSV Loaded");
                 console.log(this.csv);
