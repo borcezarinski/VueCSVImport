@@ -188,7 +188,10 @@
                     _this.sample = _.get(Papa.parse(output, { preview: 2, skipEmptyLines: true }), "data");
                     _this.csv = _.get(Papa.parse(output, { skipEmptyLines: true }), "data");
                 });
+                console.log("CSV Loaded");
+                console.log(this.csv);
                 this.$emit('loadedData', true);
+
             },
             readFile(callback) {
                 let file = this.$refs.csv.files[0];
