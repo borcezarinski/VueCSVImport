@@ -22,7 +22,7 @@
             </div>
             <div class="vue-csv-uploader-part-two">
                 <div class="vue-csv-mapping" v-if="sample">
-                    <table :class="tableClass">
+                    <table class="vue-csv-import-map-table" :class="tableClass">
                         <slot name="thead">
                             <thead>
                             <tr>
@@ -35,8 +35,8 @@
                         <tr v-for="(field, key) in fieldsToMap" :key="key">
                             <td>{{ field.label }}</td>
                             <td>
-                                <select  v-model="map[field.key]">
-                                    <option v-for="(column, key) in firstRow" :key="key" :value="column">{{ column }}</option>
+                                <select class="form-control" v-model="map[field.key]">
+                                    <option v-for="(column, key) in firstRow" :key="key" :value="key">{{ column }}</option>
                                 </select>
                             </td>
                         </tr>
