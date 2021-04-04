@@ -460,7 +460,7 @@ var papaparse_min_default = /*#__PURE__*/__webpack_require__.n(papaparse_min);
   }
 });
 // CONCATENATED MODULE: ./src/components/VueCsvImport.vue?vue&type=script&lang=js&
- /* harmony default export */ var components_VueCsvImportvue_type_script_lang_js_ = (VueCsvImportvue_type_script_lang_js_); 
+ /* harmony default export */ var components_VueCsvImportvue_type_script_lang_js_ = (VueCsvImportvue_type_script_lang_js_);
 // CONCATENATED MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
 /* globals __VUE_SSR_CONTEXT__ */
 
@@ -577,7 +577,7 @@ var component = normalizeComponent(
   null,
   null,
   null
-  
+
 )
 
 /* harmony default export */ var VueCsvImport = (component.exports);
@@ -592,9 +592,9 @@ function install(Vue) {
   Vue.component(options.componentName || 'VueCsvImport', VueCsvImport);
 }
 
-if ((typeof window === "undefined" ? "undefined" : _typeof(window)) !== undefined && window.Vue && window.Vue === external_commonjs_vue_commonjs2_vue_root_Vue_default.a) {
+/*if ((typeof window === "undefined" ? "undefined" : _typeof(window)) !== undefined && window.Vue && window.Vue === external_commonjs_vue_commonjs2_vue_root_Vue_default.a) {
   install(window.Vue);
-}
+}*/
 
 
 /* harmony default export */ var src = (VueCsvImport);
