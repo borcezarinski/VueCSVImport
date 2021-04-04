@@ -189,9 +189,10 @@
                     _this.csv = _.get(Papa.parse(output, { skipEmptyLines: true }), "data");
                     console.log("CSV Loaded");
                     console.log(_this.csv);
-                    _this.map = _this.csv[0].map(_this.csv[0]);
-                    console.log("MAP AFTER LOAD");
-                    console.log(_this.map);
+                    for (const [index, [key, value]] of Object.entries(Object.entries(_this.csv[0]))) {
+                        console.log(`${index}: ${key} = ${value}`);
+                    }
+
                 });
                 this.$emit('loadedData', true);
 

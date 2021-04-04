@@ -198,12 +198,12 @@ if (typeof window !== 'undefined') {
 // EXTERNAL MODULE: external {"commonjs":"vue","commonjs2":"vue","root":"Vue"}
 var external_commonjs_vue_commonjs2_vue_root_Vue_ = __webpack_require__("8bbf");
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"6b5e9afa-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/VueCsvImport.vue?vue&type=template&id=51e548e8&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"6b5e9afa-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/VueCsvImport.vue?vue&type=template&id=3514816e&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"vue-csv-uploader"},[_c('div',{staticClass:"form"},[_c('div',{staticClass:"vue-csv-uploader-part-one"},[(_vm.headers === null)?_c('div',{staticClass:"form-check form-group csv-import-checkbox"},[_vm._t("hasHeaders",[_c('input',{class:_vm.checkboxClass,attrs:{"type":"checkbox","id":"hasHeaders"},domProps:{"value":_vm.hasHeaders},on:{"change":_vm.toggleHasHeaders}}),_c('label',{staticClass:"form-check-label",attrs:{"for":"hasHeaders"}},[_vm._v("\n                        File Has Headers\n                    ")])],{"headers":_vm.hasHeaders,"toggle":_vm.toggleHasHeaders})],2):_vm._e(),_c('div',{staticClass:"form-group csv-import-file"},[_c('input',{ref:"csv",class:_vm.inputClass,attrs:{"type":"file","name":"csv"}})]),_c('div',{staticClass:"form-group"},[_vm._t("next",[_c('input',{class:_vm.buttonClass,attrs:{"type":"submit"},domProps:{"value":_vm.loadBtnText},on:{"click":function($event){$event.preventDefault();return _vm.load($event)}}})],{"load":_vm.load})],2)]),_c('div',{staticClass:"vue-csv-uploader-part-two"},[(_vm.sample)?_c('div',{staticClass:"vue-csv-mapping"},[_c('table',{staticClass:"vue-csv-import-map-table",class:_vm.tableClass},[_vm._t("thead",[_vm._m(0)]),_c('tbody',_vm._l((_vm.fieldsToMap),function(field,key){return _c('tr',{key:key},[_c('td',[_vm._v(_vm._s(field.label))]),_c('td',[_c('select',{directives:[{name:"model",rawName:"v-model",value:(_vm.map[field.key]),expression:"map[field.key]"}],staticClass:"form-control",on:{"change":function($event){var $$selectedVal = Array.prototype.filter.call($event.target.options,function(o){return o.selected}).map(function(o){var val = "_value" in o ? o._value : o.value;return val}); _vm.$set(_vm.map, field.key, $event.target.multiple ? $$selectedVal : $$selectedVal[0])}}},_vm._l((_vm.firstRow),function(column,index){return _c('option',{key:index,domProps:{"value":index}},[_vm._v(_vm._s(column))])}),0)])])}),0)],2),(_vm.url)?_c('div',{staticClass:"form-group"},[_vm._t("submit",[_c('input',{class:_vm.buttonClass,attrs:{"type":"submit"},domProps:{"value":_vm.submitBtnText},on:{"click":function($event){$event.preventDefault();return _vm.submit($event)}}})],{"submit":_vm.submit})],2):_vm._e()]):_vm._e()])])])}
 var staticRenderFns = [function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('thead',[_c('tr',[_c('th',[_vm._v("Field")]),_c('th',[_vm._v("Column")])])])}]
 
 
-// CONCATENATED MODULE: ./src/components/VueCsvImport.vue?vue&type=template&id=51e548e8&
+// CONCATENATED MODULE: ./src/components/VueCsvImport.vue?vue&type=template&id=3514816e&
 
 // EXTERNAL MODULE: external {"commonjs":"lodash","commonjs2":"lodash","root":"_"}
 var external_commonjs_lodash_commonjs2_lodash_root_ = __webpack_require__("60bb");
@@ -218,6 +218,18 @@ var papaparse_min = __webpack_require__("369b");
 var papaparse_min_default = /*#__PURE__*/__webpack_require__.n(papaparse_min);
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/VueCsvImport.vue?vue&type=script&lang=js&
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 //
 //
 //
@@ -408,9 +420,16 @@ var papaparse_min_default = /*#__PURE__*/__webpack_require__.n(papaparse_min);
         }), "data");
         console.log("CSV Loaded");
         console.log(_this.csv);
-        _this.map = _this.csv[0].map(_this.csv[0]);
-        console.log("MAP AFTER LOAD");
-        console.log(_this.map);
+
+        for (var _i = 0, _Object$entries = Object.entries(Object.entries(_this.csv[0])); _i < _Object$entries.length; _i++) {
+          var _Object$entries$_i = _slicedToArray(_Object$entries[_i], 2),
+              index = _Object$entries$_i[0],
+              _Object$entries$_i$ = _slicedToArray(_Object$entries$_i[1], 2),
+              key = _Object$entries$_i$[0],
+              value = _Object$entries$_i$[1];
+
+          console.log("".concat(index, ": ").concat(key, " = ").concat(value));
+        }
       });
       this.$emit('loadedData', true);
     },
