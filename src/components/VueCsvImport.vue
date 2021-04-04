@@ -158,9 +158,10 @@
         methods: {
             mapChange(){
                 this.rerender=null;
+                let _this = this;
                 if (!this.url) {
                     var hasAllKeys = this.mapFields.every(function (item) {
-                        return this.map.hasOwnProperty(item);
+                        return _this.map.hasOwnProperty(item);
                     });
 
                     if (hasAllKeys) {
