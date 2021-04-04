@@ -35,8 +35,8 @@
                         <tr v-for="(field, key) in fieldsToMap" :key="key">
                             <td>{{ field.label }}</td>
                             <td>
-                                <select class="form-control" v-model="map[field.key]">
-                                    <option v-for="(column, key) in firstRow" :key="key" :value="key">{{ column }}</option>
+                                <select class="form-control" v-model="field.label">
+                                    <option v-for="(column, key) in firstRow" :key="key" :value="column">{{ column }}</option>
                                 </select>
                             </td>
                         </tr>
