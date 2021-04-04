@@ -233,7 +233,7 @@
             map: {
                 handler: function (newVal) {
                     this.rerender=null;
-                    /*if (!this.url) {
+                    if (!this.url) {
                         var hasAllKeys = this.mapFields.every(function (item) {
                             return newVal.hasOwnProperty(item);
                         });
@@ -241,8 +241,8 @@
                         if (hasAllKeys) {
                             this.submit();
                         }
-                    }*/
-                    this.submit();
+                    }
+
                     this.rerender=true;
                 },
                 deep: true
