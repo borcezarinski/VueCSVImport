@@ -27,6 +27,7 @@
                             <thead>
                             <tr>
                                 <th>Field</th>
+                                <th>Data Preview</th>
                                 <th>Column</th>
                             </tr>
                             </thead>
@@ -34,6 +35,11 @@
                         <tbody>
                         <tr v-for="(field, key) in fieldsToMap" :key="key">
                             <td>{{ field.label }}</td>
+                            <td>
+                                <p v-for="(row, index) in csv" v-if="index>0">
+                                    {{ data[field.key] }}
+                                </p>
+                            </td>
                             <td>
                                 <select class="form-control" v-model="map[field.key]">
                                     <option v-for="(column, index) in firstRow" :key="index" :value="index">{{ column }}</option>
