@@ -12,8 +12,7 @@
 
                 </div>
                 <div class="form-group csv-import-file">
-                    <dropzone id="csv" ref="csv" :options = dropzoneOptions   :destroyDropzone="true"></dropzone>
-
+                    <input ref="csv" type="file" :class="inputClass" name="csv">
                 </div>
                 <div class="form-group">
                     <slot name="next" :load="load">
@@ -64,12 +63,8 @@
     import _ from 'lodash';
     import axios from 'axios';
     import Papa from 'papaparse';
-    import dropzone from 'vue2-dropzone';
 
     export default {
-        components:{
-          dropzone
-        },
         props: {
             value: Array,
             url: {
@@ -132,9 +127,6 @@
             rerender: true,
             form: {
                 csv: null,
-            },
-            dropzoneOptions:{
-              url: '/'
             },
             fieldsToMap: [],
             map: {},
