@@ -37,7 +37,7 @@
                             <td>{{ field.label }}</td>
                             <td>
                                 <p v-for="(row, index) in csv" v-if="index>0">
-                                    {{ row[key] }}
+                                    {{ row[map[field.label]] }}
                                 </p>
                             </td>
                             <td>
