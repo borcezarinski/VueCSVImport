@@ -189,6 +189,10 @@
                     _this.csv = _.get(Papa.parse(output, { skipEmptyLines: true }), "data");
                     console.log("CSV Loaded");
                     console.log(_this.csv);
+                    for (let attr in _this.csv[0]){
+                        console.log("ATTR");
+                        console.log(attr);
+                    }
                 });
                 this.$emit('loadedData', true);
 
