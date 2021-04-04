@@ -37,7 +37,7 @@
                             <td>{{ field.label }}</td>
                             <td>
                                 <p v-for="row in csv" v-if="index>0">
-                                    {{ row[map[key]] }}
+                                    {{ row[index]}}
                                 </p>
                             </td>
                             <td>
@@ -199,7 +199,7 @@
                     for (const [index, [key, value]] of Object.entries(Object.entries(_this.csv[0]))) {
                         for (let i = 0; i < _this.fieldsToMap.length; i++) {
                             if (_this.fieldsToMap[i].label.toLowerCase() == value.toLowerCase()) {
-                                _this.map[value] = key;
+                                _this.map[value] = parseInt(key);
                             }
                         }
                     }
@@ -207,7 +207,7 @@
                 });
                 console.log("MAP AFTER LOAD");
                 console.log(_this.map);
-                this.$emit('loadedData', true);
+                this.$emit('loadedData', _this.csv);
 
             },
             readFile(callback) {
