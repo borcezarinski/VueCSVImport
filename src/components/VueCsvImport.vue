@@ -35,7 +35,7 @@
                         <tr v-for="(field, key) in fieldsToMap" :key="key">
                             <td>{{ field.label }}</td>
                             <td>
-                                <select class="form-control" v-model="map[field.column]">
+                                <select class="form-control" v-model="map[field.key]">
                                     <option v-for="(column, key) in firstRow" :key="key" :value="key">{{ column }}</option>
                                 </select>
                             </td>
@@ -222,7 +222,10 @@
                     }
                     console.log("VueCSVImport map...");
                     console.log(this.map);
+                    console.log("mapFields.");
                     console.log(this.mapFields);
+                    console.log("firstRow");
+                    console.log(this.firstRow);
                 },
                 deep: true
             }
