@@ -36,8 +36,8 @@
                         <tr v-for="(field, key) in fieldsToMap" :key="key">
                             <td>{{ field.label }}</td>
                             <td>
-                                <p v-for="(row, index) in csv" v-if="index>0">
-                                    {{ row[index]}}
+                                <p v-for="(row, index) in csv">
+                                    {{ row[field.key] }}
                                 </p>
                             </td>
                             <td>
@@ -99,7 +99,7 @@
             },
             loadBtnText: {
                 type: String,
-                default: "Next"
+                default: "Submit"
             },
             submitBtnText: {
                 type: String,
@@ -203,11 +203,12 @@
                             }
                         }
                     }
+                    this.$emit('loadedData', _this.csv);
 
                 });
                 console.log("MAP AFTER LOAD");
                 console.log(_this.map);
-                this.$emit('loadedData', _this.csv);
+
 
             },
             readFile(callback) {
@@ -229,9 +230,8 @@
         },
         watch: {
             map: {
-                handler: function () {
-                    this.submit();
-                    /*
+                handler: function (newVal) {
+
                     if (!this.url) {
                         var hasAllKeys = this.mapFields.every(function (item) {
                             return newVal.hasOwnProperty(item);
@@ -246,7 +246,7 @@
                     console.log("mapFields.");
                     console.log(this.mapFields);
                     console.log("firstRow");
-                    console.log(this.firstRow);*/
+                    console.log(this.firstRow);
                 },
                 deep: true
             }

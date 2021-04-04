@@ -198,12 +198,12 @@ if (typeof window !== 'undefined') {
 // EXTERNAL MODULE: external {"commonjs":"vue","commonjs2":"vue","root":"Vue"}
 var external_commonjs_vue_commonjs2_vue_root_Vue_ = __webpack_require__("8bbf");
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"6b5e9afa-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/VueCsvImport.vue?vue&type=template&id=1d0c61ae&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"vue-csv-uploader"},[_c('div',{staticClass:"form"},[_c('div',{staticClass:"vue-csv-uploader-part-one"},[(_vm.headers === null)?_c('div',{staticClass:"form-check form-group csv-import-checkbox"},[_vm._t("hasHeaders",[_c('input',{class:_vm.checkboxClass,attrs:{"type":"checkbox","id":"hasHeaders"},domProps:{"value":_vm.hasHeaders},on:{"change":_vm.toggleHasHeaders}}),_c('label',{staticClass:"form-check-label",attrs:{"for":"hasHeaders"}},[_vm._v("\n                        File Has Headers\n                    ")])],{"headers":_vm.hasHeaders,"toggle":_vm.toggleHasHeaders})],2):_vm._e(),_c('div',{staticClass:"form-group csv-import-file"},[_c('input',{ref:"csv",class:_vm.inputClass,attrs:{"type":"file","name":"csv"}})]),_c('div',{staticClass:"form-group"},[_vm._t("next",[_c('input',{class:_vm.buttonClass,attrs:{"type":"submit"},domProps:{"value":_vm.loadBtnText},on:{"click":function($event){$event.preventDefault();return _vm.load($event)}}})],{"load":_vm.load})],2)]),_c('div',{staticClass:"vue-csv-uploader-part-two"},[(_vm.sample)?_c('div',{staticClass:"vue-csv-mapping"},[_c('table',{staticClass:"vue-csv-import-map-table",class:_vm.tableClass},[_vm._t("thead",[_vm._m(0)]),_c('tbody',_vm._l((_vm.fieldsToMap),function(field,key){return _c('tr',{key:key},[_c('td',[_vm._v(_vm._s(field.label))]),_c('td',_vm._l((_vm.csv),function(row,index){return (index>0)?_c('p',[_vm._v("\n                                "+_vm._s(row[index])+"\n                            ")]):_vm._e()}),0),_c('td',[_c('select',{directives:[{name:"model",rawName:"v-model",value:(_vm.map[field.key]),expression:"map[field.key]"}],staticClass:"form-control",on:{"change":function($event){var $$selectedVal = Array.prototype.filter.call($event.target.options,function(o){return o.selected}).map(function(o){var val = "_value" in o ? o._value : o.value;return val}); _vm.$set(_vm.map, field.key, $event.target.multiple ? $$selectedVal : $$selectedVal[0])}}},_vm._l((_vm.firstRow),function(column,index){return _c('option',{key:index,domProps:{"value":index}},[_vm._v(_vm._s(column))])}),0)])])}),0)],2),(_vm.url)?_c('div',{staticClass:"form-group"},[_vm._t("submit",[_c('input',{class:_vm.buttonClass,attrs:{"type":"submit"},domProps:{"value":_vm.submitBtnText},on:{"click":function($event){$event.preventDefault();return _vm.submit($event)}}})],{"submit":_vm.submit})],2):_vm._e()]):_vm._e()])])])}
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"6b5e9afa-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/VueCsvImport.vue?vue&type=template&id=56e47c9c&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"vue-csv-uploader"},[_c('div',{staticClass:"form"},[_c('div',{staticClass:"vue-csv-uploader-part-one"},[(_vm.headers === null)?_c('div',{staticClass:"form-check form-group csv-import-checkbox"},[_vm._t("hasHeaders",[_c('input',{class:_vm.checkboxClass,attrs:{"type":"checkbox","id":"hasHeaders"},domProps:{"value":_vm.hasHeaders},on:{"change":_vm.toggleHasHeaders}}),_c('label',{staticClass:"form-check-label",attrs:{"for":"hasHeaders"}},[_vm._v("\n                        File Has Headers\n                    ")])],{"headers":_vm.hasHeaders,"toggle":_vm.toggleHasHeaders})],2):_vm._e(),_c('div',{staticClass:"form-group csv-import-file"},[_c('input',{ref:"csv",class:_vm.inputClass,attrs:{"type":"file","name":"csv"}})]),_c('div',{staticClass:"form-group"},[_vm._t("next",[_c('input',{class:_vm.buttonClass,attrs:{"type":"submit"},domProps:{"value":_vm.loadBtnText},on:{"click":function($event){$event.preventDefault();return _vm.load($event)}}})],{"load":_vm.load})],2)]),_c('div',{staticClass:"vue-csv-uploader-part-two"},[(_vm.sample)?_c('div',{staticClass:"vue-csv-mapping"},[_c('table',{staticClass:"vue-csv-import-map-table",class:_vm.tableClass},[_vm._t("thead",[_vm._m(0)]),_c('tbody',_vm._l((_vm.fieldsToMap),function(field,key){return _c('tr',{key:key},[_c('td',[_vm._v(_vm._s(field.label))]),_c('td',_vm._l((_vm.csv),function(row,index){return _c('p',[_vm._v("\n                                "+_vm._s(row[field.key])+"\n                            ")])}),0),_c('td',[_c('select',{directives:[{name:"model",rawName:"v-model",value:(_vm.map[field.key]),expression:"map[field.key]"}],staticClass:"form-control",on:{"change":function($event){var $$selectedVal = Array.prototype.filter.call($event.target.options,function(o){return o.selected}).map(function(o){var val = "_value" in o ? o._value : o.value;return val}); _vm.$set(_vm.map, field.key, $event.target.multiple ? $$selectedVal : $$selectedVal[0])}}},_vm._l((_vm.firstRow),function(column,index){return _c('option',{key:index,domProps:{"value":index}},[_vm._v(_vm._s(column))])}),0)])])}),0)],2),(_vm.url)?_c('div',{staticClass:"form-group"},[_vm._t("submit",[_c('input',{class:_vm.buttonClass,attrs:{"type":"submit"},domProps:{"value":_vm.submitBtnText},on:{"click":function($event){$event.preventDefault();return _vm.submit($event)}}})],{"submit":_vm.submit})],2):_vm._e()]):_vm._e()])])])}
 var staticRenderFns = [function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('thead',[_c('tr',[_c('th',[_vm._v("Field")]),_c('th',[_vm._v("Data Preview")]),_c('th',[_vm._v("Column")])])])}]
 
 
-// CONCATENATED MODULE: ./src/components/VueCsvImport.vue?vue&type=template&id=1d0c61ae&
+// CONCATENATED MODULE: ./src/components/VueCsvImport.vue?vue&type=template&id=56e47c9c&
 
 // EXTERNAL MODULE: external {"commonjs":"lodash","commonjs2":"lodash","root":"_"}
 var external_commonjs_lodash_commonjs2_lodash_root_ = __webpack_require__("60bb");
@@ -326,7 +326,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
     },
     loadBtnText: {
       type: String,
-      default: "Next"
+      default: "Submit"
     },
     submitBtnText: {
       type: String,
@@ -414,6 +414,8 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
       });
     },
     load: function load() {
+      var _this2 = this;
+
       var _this = this;
 
       this.readFile(function (output) {
@@ -440,10 +442,11 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
             }
           }
         }
+
+        _this2.$emit('loadedData', _this.csv);
       });
       console.log("MAP AFTER LOAD");
       console.log(_this.map);
-      this.$emit('loadedData', _this.csv);
     },
     readFile: function readFile(callback) {
       var file = this.$refs.csv.files[0];
@@ -465,23 +468,23 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
   },
   watch: {
     map: {
-      handler: function handler() {
-        this.submit();
-        /*
+      handler: function handler(newVal) {
         if (!this.url) {
-            var hasAllKeys = this.mapFields.every(function (item) {
-                return newVal.hasOwnProperty(item);
-            });
-             if (hasAllKeys) {
-                this.submit();
-            }
+          var hasAllKeys = this.mapFields.every(function (item) {
+            return newVal.hasOwnProperty(item);
+          });
+
+          if (hasAllKeys) {
+            this.submit();
+          }
         }
+
         console.log("VueCSVImport map...");
         console.log(this.map);
         console.log("mapFields.");
         console.log(this.mapFields);
         console.log("firstRow");
-        console.log(this.firstRow);*/
+        console.log(this.firstRow);
       },
       deep: true
     }
