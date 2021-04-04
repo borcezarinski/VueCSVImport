@@ -189,9 +189,13 @@
                     _this.csv = _.get(Papa.parse(output, { skipEmptyLines: true }), "data");
                     console.log("CSV Loaded");
                     console.log(_this.csv);
+                    // eslint-disable-next-line no-unused-vars
                     for (const [index, [key, value]] of Object.entries(Object.entries(_this.csv[0]))) {
-                        console.log(`${index}: ${key} = ${value}`);
-                        _this.map[value] = key;}
+                        if (_this.fieldsToMap[index].toLowerCase() == value.toLowerCase()) {
+                            _this.map[value] = key;
+                        }
+                    }
+
                 });
                 console.log("MAP AFTER LOAD");
                 console.log(_this.map);
