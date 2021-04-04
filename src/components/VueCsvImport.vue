@@ -36,8 +36,8 @@
                         <tr v-for="(field, key) in fieldsToMap" :key="key">
                             <td>{{ field.label }}</td>
                             <td>
-                                <p v-for="(row, index) in csv">
-                                    {{ row[field.key] }}
+                                <p v-for="(row, index) in csv" v-if="index>0">
+                                    {{ row[key] }}
                                 </p>
                             </td>
                             <td>
@@ -199,7 +199,7 @@
                     for (const [index, [key, value]] of Object.entries(Object.entries(_this.csv[0]))) {
                         for (let i = 0; i < _this.fieldsToMap.length; i++) {
                             if (_this.fieldsToMap[i].label.toLowerCase() == value.toLowerCase()) {
-                                _this.map[value] = key;
+                                _this.map[value] = Number(key);
                             }
                         }
                     }
