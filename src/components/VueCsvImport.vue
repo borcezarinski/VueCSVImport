@@ -6,7 +6,7 @@
                     <slot name="hasHeaders" :headers="hasHeaders" :toggle="toggleHasHeaders">
                         <input :class="checkboxClass" type="checkbox" id="hasHeaders" :value="hasHeaders" @change="toggleHasHeaders">
                         <label class="form-check-label" for="hasHeaders">
-                            File Has Headers TEST CHANGE
+                            File Has Headers
                         </label>
                     </slot>
 

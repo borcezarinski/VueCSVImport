@@ -5,9 +5,9 @@ function install(Vue, options = {}) {
     Vue.component(options.componentName || 'VueCsvImport', VueCsvImport);
 }
 
-if (typeof window !== undefined && window.Vue && window.Vue === Vue) {
+/*if (typeof window !== undefined && window.Vue && window.Vue === Vue) {
     install(window.Vue);
-}
+}*/
 
 export { VueCsvImport, install };
 
