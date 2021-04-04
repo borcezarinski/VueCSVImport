@@ -27,7 +27,7 @@
                             <thead>
                             <tr>
                                 <th>Field</th>
-                                <th>CSV Column</th>
+                                <th>Column</th>
                             </tr>
                             </thead>
                         </slot>
@@ -35,7 +35,7 @@
                         <tr v-for="(field, key) in fieldsToMap" :key="key">
                             <td>{{ field.label }}</td>
                             <td>
-                                <select class="form-control" v-model="map[field.key]">
+                                <select  v-model="map[field.key]">
                                     <option v-for="(column, key) in firstRow" :key="key" :value="key">{{ column }}</option>
                                 </select>
                             </td>
@@ -210,6 +210,7 @@
         watch: {
             map: {
                 handler: function (newVal) {
+
                     if (!this.url) {
                         var hasAllKeys = this.mapFields.every(function (item) {
                             return newVal.hasOwnProperty(item);
@@ -219,6 +220,9 @@
                             this.submit();
                         }
                     }
+                    console.log("VueCSVImport map...");
+                    console.log(this.map);
+                    console.log(this.mapFields);
                 },
                 deep: true
             }
