@@ -190,8 +190,11 @@
                     console.log("CSV Loaded");
                     console.log(_this.csv);
                     for (let attr in _this.csv[0]){
-                        console.log("ATTR");
-                        console.log(attr);
+                        _this.map=[];
+                        _this.map.push({ attr: _this.csv[0][attr]
+                        });
+                        console.log("MAP AFTER LOAD");
+                        console.log(_this.map);
                     }
                 });
                 this.$emit('loadedData', true);
