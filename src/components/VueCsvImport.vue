@@ -36,7 +36,7 @@
                             <td>{{ field.label }}</td>
                             <td>
                                 <select  v-model="map[field.key]">
-                                    <option v-for="(column, key) in firstRow" :key="key" :value="key">{{ column }}</option>
+                                    <option v-for="(column, key) in firstRow" :key="key" :value="column">{{ column }}</option>
                                 </select>
                             </td>
                         </tr>
