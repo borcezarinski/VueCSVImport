@@ -33,7 +33,7 @@
                             </thead>
                         </slot>
                         <tbody>
-                        <tr v-for="(field, key) in fieldsToMap" :key="key">
+                        <tr v-for="(field, key) in fieldsToMap" :key="key" v-if="rerender">
                             <td>{{ field.label }}</td>
                             <td>
                                 <p v-for="(row, index) in csv" v-if="index>0">
@@ -124,6 +124,7 @@
         },
 
         data: () => ({
+            rerender: true,
             form: {
                 csv: null,
             },
@@ -231,7 +232,7 @@
         watch: {
             map: {
                 handler: function (newVal) {
-
+                    this.rerender=null;
                     if (!this.url) {
                         var hasAllKeys = this.mapFields.every(function (item) {
                             return newVal.hasOwnProperty(item);
@@ -241,6 +242,7 @@
                             this.submit();
                         }
                     }
+                    this.rerender=true;
                     console.log("VueCSVImport map...");
                     console.log(this.map);
                     console.log("mapFields.");
