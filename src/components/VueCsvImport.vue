@@ -233,7 +233,7 @@
             map: {
                 handler: function (newVal) {
                     this.rerender=null;
-                    if (!this.url) {
+                    /*if (!this.url) {
                         var hasAllKeys = this.mapFields.every(function (item) {
                             return newVal.hasOwnProperty(item);
                         });
@@ -241,14 +241,9 @@
                         if (hasAllKeys) {
                             this.submit();
                         }
-                    }
+                    }*/
+                    this.submit();
                     this.rerender=true;
-                    console.log("VueCSVImport map...");
-                    console.log(this.map);
-                    console.log("mapFields.");
-                    console.log(this.mapFields);
-                    console.log("firstRow");
-                    console.log(this.firstRow);
                 },
                 deep: true
             }
