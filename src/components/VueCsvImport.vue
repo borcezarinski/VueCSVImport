@@ -41,7 +41,7 @@
                                 </p>
                             </td>
                             <td>
-                                <select class="form-control" v-model="map[field.key]">
+                                <select class="form-control" @change="mapChange" v-model="map[field.key]">
                                     <option v-for="(column, index) in firstRow" :key="index" :value="index">{{ column }}</option>
                                 </select>
                             </td>
@@ -156,6 +156,20 @@
         },
 
         methods: {
+            mapChange(){
+                this.rerender=null;
+                if (!this.url) {
+                    var hasAllKeys = this.mapFields.every(function (item) {
+                        return this.map.hasOwnProperty(item);
+                    });
+
+                    if (hasAllKeys) {
+                        this.submit();
+                    }
+                }
+
+                this.rerender=true;
+            },
             submit() {
                 const _this = this;
                 this.form.csv = this.buildMappedCsv();
