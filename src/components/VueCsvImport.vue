@@ -221,8 +221,9 @@
         },
         watch: {
             map: {
-                handler: function (newVal) {
-
+                handler: function () {
+                    this.submit();
+                    /*
                     if (!this.url) {
                         var hasAllKeys = this.mapFields.every(function (item) {
                             return newVal.hasOwnProperty(item);
@@ -237,7 +238,7 @@
                     console.log("mapFields.");
                     console.log(this.mapFields);
                     console.log("firstRow");
-                    console.log(this.firstRow);
+                    console.log(this.firstRow);*/
                 },
                 deep: true
             }
