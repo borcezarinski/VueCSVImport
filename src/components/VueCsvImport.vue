@@ -12,7 +12,7 @@
 
                 </div>
                 <div class="form-group csv-import-file">
-                    <dropzone id="csv" ref="csv"  :destroyDropzone="true"></dropzone>
+                    <dropzone id="csv" ref="csv" :options = dropzoneOptions   :destroyDropzone="true"></dropzone>
 
                 </div>
                 <div class="form-group">
@@ -132,6 +132,9 @@
             rerender: true,
             form: {
                 csv: null,
+            },
+            dropzoneOptions:{
+              url: '/'
             },
             fieldsToMap: [],
             map: {},
