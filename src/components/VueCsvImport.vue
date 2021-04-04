@@ -191,9 +191,12 @@
                     console.log(_this.csv);
                     for (const [index, [key, value]] of Object.entries(Object.entries(_this.csv[0]))) {
                         console.log(`${index}: ${key} = ${value}`);
-                    }
-
+                        let jsObj = {};
+                        jsObj[value] = key;
+                        _this.map.push(jsObj)}
                 });
+                console.log("MAP AFTER LOAD");
+                console.log(_this.map);
                 this.$emit('loadedData', true);
 
             },
