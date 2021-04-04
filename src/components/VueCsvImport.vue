@@ -42,7 +42,7 @@
                             </td>
                             <td>
                                 <select class="form-control" v-model="map[field.key]">
-                                    <option v-for="(column, index) in firstRow" :key="key" :value="key">{{ column }}</option>
+                                    <option v-for="(column, index) in firstRow" :key="index" :value="index">{{ column }}</option>
                                 </select>
                             </td>
                         </tr>
