@@ -35,8 +35,8 @@
                         <tr v-for="(field, key) in fieldsToMap" :key="key">
                             <td>{{ field.label }}</td>
                             <td>
-                                <select class="form-control" v-model="map[field.key]" :value="field.column">
-                                    <option v-for="(column, key) in firstRow" :key="key" :value="key">{{ column }}</option>
+                                <select class="form-control" v-model="map[field.key]">
+                                    <option v-for="(column, index) in firstRow" :key="index" :value="index">{{ column }}</option>
                                 </select>
                             </td>
                         </tr>
@@ -190,8 +190,6 @@
                     console.log("CSV Loaded");
                     console.log(_this.csv);
                 });
-                console.log("CSV Loaded");
-                console.log(this.csv);
                 this.$emit('loadedData', true);
 
             },
