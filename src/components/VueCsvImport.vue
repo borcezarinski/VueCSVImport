@@ -191,8 +191,10 @@
                     console.log(_this.csv);
                     // eslint-disable-next-line no-unused-vars
                     for (const [index, [key, value]] of Object.entries(Object.entries(_this.csv[0]))) {
-                        if (_this.fieldsToMap[index].toLowerCase() == value.toLowerCase()) {
-                            _this.map[value] = key;
+                        for (let i = 0; i < _this.fieldsToMap.length; i++) {
+                            if (_this.fieldsToMap[i].toLowerCase() == value.toLowerCase()) {
+                                _this.map[value] = key;
+                            }
                         }
                     }
 
