@@ -12,7 +12,8 @@
 
                 </div>
                 <div class="form-group csv-import-file">
-                    <input ref="csv" type="file" :class="inputClass" name="csv">
+
+                    <vue-dropzone  ref="csv" id="dropzone" :class="inputClass"  name="csv" :options="dropzoneOptions"></vue-dropzone>
                 </div>
                 <div class="form-group">
                     <slot name="next" :load="load">
@@ -63,7 +64,13 @@
     import _ from 'lodash';
     import axios from 'axios';
     import Papa from 'papaparse';
+    import vue2Dropzone from 'vue2-dropzone'
+    import 'vue2-dropzone/dist/vue2Dropzone.min.css'
     export default {
+        components: {
+            vueDropzone: vue2Dropzone
+        },
+
         props: {
             value: Array,
             url: {
@@ -126,6 +133,15 @@
             rerender: true,
             form: {
                 csv: null,
+            },dropzoneOptions: {
+                url: 'https://httpbin.org/post',
+                thumbnailWidth: 150,
+                maxFilesize: 1,
+                autoProcessQueue: true,
+                acceptedFiles:
+                    "text/csv,.csv,.xls,.xlsx.,.doc,.docx, application/msword,application/msword",
+                maxFiles: 1,
+                dictDefaultMessage:'Drag and Drop or choose a file to upload your customers. <br /> Only .csv files are supported.'
             },
             fieldsToMap: [],
             map: {},
@@ -227,8 +243,7 @@
 
             },
             readFile(callback) {
-                let file = this.$refs.csv.files[0];
-
+                let file = this.$refs.csv.getAcceptedFiles()[0];
                 if (file) {
                     let reader = new FileReader();
                     reader.readAsText(file, "UTF-8");
