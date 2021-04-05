@@ -12,9 +12,9 @@
 
                 </div>
                 <div style="width:50%;margin-left:auto;margin-right:auto;">
-                <div class="form-group csv-import-file">
-                    <vue-dropzone  ref="csv" id="dropzone"   name="csv" :options="dropzoneOptions"></vue-dropzone>
-                </div>
+                    <div class="form-group csv-import-file">
+                        <vue-dropzone  ref="csv" id="dropzone"  name="csv" :options="dropzoneOptions"  @vdropzone-success="load"></vue-dropzone>
+                    </div>
                 </div>
                 <div class="form-group">
                     <slot name="next" :load="load">
@@ -222,6 +222,7 @@
                 });
             },
             load() {
+                this.step=2;
                 const _this = this;
 
                 this.readFile((output) => {
