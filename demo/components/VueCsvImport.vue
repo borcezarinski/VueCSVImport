@@ -22,21 +22,27 @@
             </div>
             <div class="vue-csv-uploader-part-two">
                 <div class="vue-csv-mapping" v-if="sample">
-                    <table :class="tableClass">
+                    <table class="vue-csv-import-map-table" :class="tableClass">
                         <slot name="thead">
                             <thead>
                             <tr>
                                 <th>Field</th>
-                                <th>CSV Column</th>
+                                <th>Data Preview</th>
+                                <th>Column</th>
                             </tr>
                             </thead>
                         </slot>
                         <tbody>
-                        <tr v-for="(field, key) in fieldsToMap" :key="key">
+                        <tr v-for="(field, key) in fieldsToMap" :key="key" v-if="rerender">
                             <td>{{ field.label }}</td>
                             <td>
-                                <select class="form-control" v-model="map[field.key]">
-                                    <option v-for="(column, key) in firstRow" :key="key" :value="key">{{ column }}</option>
+                                <p v-for="(row, index) in csv" v-if="index>0">
+                                    {{ row[map[field.label]] }}
+                                </p>
+                            </td>
+                            <td>
+                                <select class="form-control" @change="mapChange" v-model="map[field.key]">
+                                    <option v-for="(column, index) in firstRow" :key="index" :value="index">{{ column }}</option>
                                 </select>
                             </td>
                         </tr>
@@ -57,7 +63,6 @@
     import _ from 'lodash';
     import axios from 'axios';
     import Papa from 'papaparse';
-
     export default {
         props: {
             value: Array,
@@ -93,7 +98,7 @@
             },
             loadBtnText: {
                 type: String,
-                default: "Next"
+                default: "Submit"
             },
             submitBtnText: {
                 type: String,
@@ -118,6 +123,7 @@
         },
 
         data: () => ({
+            rerender: true,
             form: {
                 csv: null,
             },
@@ -149,6 +155,21 @@
         },
 
         methods: {
+            mapChange(){
+                this.rerender=null;
+                let _this = this;
+                if (!this.url) {
+                    var hasAllKeys = this.mapFields.every(function (item) {
+                        return _this.map.hasOwnProperty(item);
+                    });
+
+                    if (hasAllKeys) {
+                        this.submit();
+                    }
+                }
+
+                this.rerender=true;
+            },
             submit() {
                 const _this = this;
                 this.form.csv = this.buildMappedCsv();
@@ -187,7 +208,23 @@
                 this.readFile((output) => {
                     _this.sample = _.get(Papa.parse(output, { preview: 2, skipEmptyLines: true }), "data");
                     _this.csv = _.get(Papa.parse(output, { skipEmptyLines: true }), "data");
+                    console.log("CSV Loaded");
+                    console.log(_this.csv);
+                    // eslint-disable-next-line no-unused-vars
+                    for (const [index, [key, value]] of Object.entries(Object.entries(_this.csv[0]))) {
+                        for (let i = 0; i < _this.fieldsToMap.length; i++) {
+                            if (_this.fieldsToMap[i].label.toLowerCase() == value.toLowerCase()) {
+                                _this.map[value] = Number(key);
+                            }
+                        }
+                    }
+                    this.$emit('loadedData', _this.csv);
+
                 });
+                console.log("MAP AFTER LOAD");
+                console.log(_this.map);
+
+
             },
             readFile(callback) {
                 let file = this.$refs.csv.files[0];
@@ -209,6 +246,7 @@
         watch: {
             map: {
                 handler: function (newVal) {
+                    this.rerender=null;
                     if (!this.url) {
                         var hasAllKeys = this.mapFields.every(function (item) {
                             return newVal.hasOwnProperty(item);
@@ -218,6 +256,8 @@
                             this.submit();
                         }
                     }
+
+                    this.rerender=true;
                 },
                 deep: true
             }
