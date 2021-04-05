@@ -16,11 +16,7 @@
                         <vue-dropzone  ref="csv" id="dropzone"  name="csv" :options="dropzoneOptions"  @vdropzone-success="load"></vue-dropzone>
                     </div>
                 </div>
-                <div class="form-group">
-                    <slot name="next" :load="load">
-                        <input type="submit" :class="buttonClass" @click.prevent="load" :value="loadBtnText">
-                    </slot>
-                </div>
+
             </div>
             <div class="vue-csv-uploader-part-two" v-show="step == 2">
                 <div class="vue-csv-mapping" v-if="sample">
@@ -228,8 +224,6 @@
                 this.readFile((output) => {
                     _this.sample = _.get(Papa.parse(output, { preview: 2, skipEmptyLines: true }), "data");
                     _this.csv = _.get(Papa.parse(output, { skipEmptyLines: true }), "data");
-                    console.log("CSV Loaded");
-                    console.log(_this.csv);
                     // eslint-disable-next-line no-unused-vars
                     for (const [index, [key, value]] of Object.entries(Object.entries(_this.csv[0]))) {
                         for (let i = 0; i < _this.fieldsToMap.length; i++) {
@@ -238,11 +232,11 @@
                             }
                         }
                     }
-                    this.$emit('loadedData', _this.csv);
+                    this.form.csv = this.buildMappedCsv();
+                    this.$emit('loadedData', this.form.csv);
+                    // this.$emit('loadedData', _this.csv);
 
                 });
-                console.log("MAP AFTER LOAD");
-                console.log(_this.map);
 
 
             },
