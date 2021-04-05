@@ -1,7 +1,7 @@
 <template>
     <div class="vue-csv-uploader">
         <div class="form">
-            <div class="vue-csv-uploader-part-one">
+            <div class="vue-csv-uploader-part-one" v-show="step == 1">
                 <div class="form-check form-group csv-import-checkbox" v-if="headers === null">
                     <slot name="hasHeaders" :headers="hasHeaders" :toggle="toggleHasHeaders">
                         <input :class="checkboxClass" type="checkbox" id="hasHeaders" :value="hasHeaders" @change="toggleHasHeaders">
@@ -22,7 +22,7 @@
                     </slot>
                 </div>
             </div>
-            <div class="vue-csv-uploader-part-two">
+            <div class="vue-csv-uploader-part-two" v-show="step == 2">
                 <div class="vue-csv-mapping" v-if="sample">
                     <table class="vue-csv-import-map-table" :class="tableClass">
                         <slot name="thead">
@@ -134,7 +134,8 @@
             rerender: true,
             form: {
                 csv: null,
-            },dropzoneOptions: {
+            },
+            dropzoneOptions: {
                 url: 'https://httpbin.org/post',
                 thumbnailWidth: 150,
                 maxFilesize: 1,
@@ -147,6 +148,7 @@
             fieldsToMap: [],
             map: {},
             hasHeaders: true,
+            step:1,
             csv: null,
             sample: null,
         }),
