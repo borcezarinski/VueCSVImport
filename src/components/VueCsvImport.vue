@@ -46,9 +46,9 @@
                         </tr>
                         </tbody>
                     </table>
-                    <div class="form-group" v-if="url">
+                    <div class="form-group">
                         <slot name="submit" :submit="submit">
-                            <input type="submit" :class="buttonClass" @click.prevent="submit" :value="submitBtnText">
+                            <input type="submit" :class="buttonClass" @click.prevent="finish" :value="submitBtnText">
                         </slot>
                     </div>
                 </div>
@@ -170,6 +170,9 @@
         },
 
         methods: {
+            finish(){
+                this.$emit('finishCsv');
+            },
             mapChange(){
                 this.rerender=null;
                 let _this = this;
