@@ -2,15 +2,6 @@
     <div class="vue-csv-uploader">
         <div class="form">
             <div class="vue-csv-uploader-part-one" v-show="step == 1">
-                <div class="form-check form-group csv-import-checkbox" v-if="headers === null">
-                    <slot name="hasHeaders" :headers="hasHeaders" :toggle="toggleHasHeaders">
-                        <input :class="checkboxClass" type="checkbox" id="hasHeaders" :value="hasHeaders" @change="toggleHasHeaders">
-                        <label class="form-check-label" for="hasHeaders">
-                            File Has Headers
-                        </label>
-                    </slot>
-
-                </div>
                 <div style="width:50%;margin-left:auto;margin-right:auto;">
                     <div class="form-group csv-import-file">
                         <vue-dropzone  ref="csv" id="dropzone"  name="csv" :options="dropzoneOptions"  @vdropzone-success="load"></vue-dropzone>
