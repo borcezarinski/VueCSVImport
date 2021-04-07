@@ -25,9 +25,9 @@
                         <tr v-for="(field, key) in fieldsToMap" :key="key" v-if="rerender">
                             <td>{{ field.label }}</td>
                             <td>
-                                <p v-for="(row, index) in csv" v-if="index>0 && index<5">
+                                <p v-for="(row, index) in csv" v-if="index>0 && index<4">
                                     {{ row[map[field.label]] }}
-                                    <span v-if="csv.length>5">(   + {{ Number(csv.length) - 3 }} more )</span>
+                                    <span v-if="csv.length>=4 && index==3">(   + {{ Number(csv.length) - 3 }} more )</span>
                                 </p>
                             </td>
                             <td>
