@@ -27,7 +27,7 @@
                             <td>
                                 <p v-for="(row, index) in csv" v-if="index>0 && index<4">
                                     {{ row[map[field.label]] }}
-                                    <span v-if="csv.length>=4 && index==3">(   + {{ Number(csv.length) - 3 }} more )</span>
+                                    <span v-if="csv.length>=4 && index==3">(   + {{ Number(csv.length) - 4 }} more )</span>
                                 </p>
                             </td>
                             <td>
