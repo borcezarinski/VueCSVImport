@@ -110,7 +110,7 @@
             },
             buttonClass: {
                 type: String,
-                default: "btn btn-primary"
+                default: "btn btn-falcon-primary mt-3"
             },
             inputClass: {
                 type: String,
