@@ -171,10 +171,8 @@
                     var hasAllKeys = this.mapFields.every(function (item) {
                         return _this.map.hasOwnProperty(item);
                     });
+                  this.submit();
 
-                    if (hasAllKeys) {
-                        this.submit();
-                    }
                 }
 
                 this.rerender=true;
