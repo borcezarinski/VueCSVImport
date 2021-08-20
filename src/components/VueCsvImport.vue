@@ -23,7 +23,7 @@
                         </slot>
                         <tbody>
                         <tr v-for="(field, key) in fieldsToMap" :key="key" v-if="rerender">
-                            <td>{{ field.label }}</td>
+                            <td>{{ field.label }} <span class="text-warning" v-show="field.required">*</span></td>
                             <td>
                                 <p v-for="(row, index) in csv" v-if="index>0 && index<4">
                                     {{ row[map[field.label]] }}
