@@ -162,7 +162,7 @@
 
         methods: {
             finish(){
-                this.$emit('finishCsv', this.map);
+                this.$emit('finishCsv', this.form.csv);
             },
             mapChange(){
                 this.rerender=null;
