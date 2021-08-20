@@ -28,7 +28,7 @@
                         <slot name="thead">
                             <thead>
                             <tr>
-                                <th>Field</th>
+                                <th>Fieldname</th>
                                 <th>Data Preview</th>
                                 <th>Column</th>
                             </tr>
