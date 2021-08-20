@@ -146,8 +146,9 @@
             if (_.isArray(this.mapFields)) {
                 this.fieldsToMap = _.map(this.mapFields, (item) => {
                     return {
-                        key: item,
-                        label: item
+                        key: item.label,
+                        label: item.label,
+                      required: item.required
                     };
                 });
             } else {
