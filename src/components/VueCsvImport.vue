@@ -123,7 +123,7 @@
                 csv: null,
             },
             dropzoneOptions: {
-                url: 'https://httpbin.org/post',
+                url: this.url ? this.url : 'https://httpbin.org/post',
                 thumbnailWidth: 150,
                 maxFilesize: 1,
                 autoProcessQueue: true,
