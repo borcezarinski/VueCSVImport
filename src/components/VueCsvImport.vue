@@ -123,7 +123,7 @@
                 csv: null,
             },
             dropzoneOptions: {
-                url: 'https://d3nffre1ocg21f.cloudfront.net',
+                url: 'https://httpbin.org/post',
                 thumbnailWidth: 150,
                 maxFilesize: 1,
                 autoProcessQueue: true,
