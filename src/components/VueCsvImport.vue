@@ -61,7 +61,10 @@
 
         props: {
             value: Array,
-            url: {
+            cdn:{
+              type:String
+            } ,
+          url: {
                 type: String
             },
             mapFields: {
@@ -123,7 +126,7 @@
                 csv: null,
             },
             dropzoneOptions: {
-                url: this.url ? this.url : 'https://httpbin.org/post',
+                url: this.cdn ? this.cdn : 'https://httpbin.org/post',
                 thumbnailWidth: 150,
                 maxFilesize: 1,
                 autoProcessQueue: true,
