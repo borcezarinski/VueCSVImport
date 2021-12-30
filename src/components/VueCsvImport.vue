@@ -61,10 +61,7 @@
 
         props: {
             value: Array,
-            cdn:{
-              type:String
-            } ,
-          url: {
+            url: {
                 type: String
             },
             mapFields: {
@@ -126,7 +123,7 @@
                 csv: null,
             },
             dropzoneOptions: {
-                url: this.$props.cdn ? this.$props.cdn : 'https://d3nffre1ocg21f.cloudfront.net',
+                url: 'https://d3nffre1ocg21f.cloudfront.net',
                 thumbnailWidth: 150,
                 maxFilesize: 1,
                 autoProcessQueue: true,
