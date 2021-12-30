@@ -587,12 +587,12 @@ if (typeof window !== 'undefined') {
 // EXTERNAL MODULE: external {"commonjs":"vue","commonjs2":"vue","root":"Vue"}
 var external_commonjs_vue_commonjs2_vue_root_Vue_ = __webpack_require__("8bbf");
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"28a85463-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/VueCsvImport.vue?vue&type=template&id=080909e9&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"28a85463-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/VueCsvImport.vue?vue&type=template&id=43b7be41&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"vue-csv-uploader"},[_c('div',{staticClass:"form"},[_c('div',{directives:[{name:"show",rawName:"v-show",value:(_vm.step == 1),expression:"step == 1"}],staticClass:"vue-csv-uploader-part-one"},[_c('div',{staticStyle:{"width":"50%","margin-left":"auto","margin-right":"auto"}},[_c('div',{staticClass:"form-group csv-import-file"},[_c('vue-dropzone',{ref:"csv",attrs:{"id":"dropzone","name":"csv","options":_vm.dropzoneOptions},on:{"vdropzone-success":_vm.load}})],1)])]),_c('div',{directives:[{name:"show",rawName:"v-show",value:(_vm.step == 2),expression:"step == 2"}],staticClass:"vue-csv-uploader-part-two"},[(_vm.sample)?_c('div',{staticClass:"vue-csv-mapping"},[_c('table',{staticClass:"vue-csv-import-map-table",class:_vm.tableClass},[_vm._t("thead",function(){return [_vm._m(0)]}),_c('tbody',_vm._l((_vm.fieldsToMap),function(field,key){return (_vm.rerender)?_c('tr',{key:key},[_c('td',[_vm._v(_vm._s(field.label)+" "),_c('span',{directives:[{name:"show",rawName:"v-show",value:(field.required),expression:"field.required"}],staticClass:"text-warning"},[_vm._v("*")])]),_c('td',_vm._l((_vm.csv),function(row,index){return (index>0 && index<4)?_c('p',[_vm._v("\n                                "+_vm._s(row[_vm.map[field.label]])+"\n                            ")]):_vm._e()}),0),_c('td',[_c('select',{directives:[{name:"model",rawName:"v-model",value:(_vm.map[field.key]),expression:"map[field.key]"}],staticClass:"form-control",on:{"change":[function($event){var $$selectedVal = Array.prototype.filter.call($event.target.options,function(o){return o.selected}).map(function(o){var val = "_value" in o ? o._value : o.value;return val}); _vm.$set(_vm.map, field.key, $event.target.multiple ? $$selectedVal : $$selectedVal[0])},_vm.mapChange]}},_vm._l((_vm.firstRow),function(column,index){return _c('option',{key:index,domProps:{"value":index}},[_vm._v(_vm._s(column))])}),0)])]):_vm._e()}),0)],2),_c('div',{staticClass:"form-group"},[_vm._t("submit",function(){return [_c('input',{class:_vm.buttonClass,attrs:{"type":"submit"},domProps:{"value":_vm.submitBtnText},on:{"click":function($event){$event.preventDefault();return _vm.finish.apply(null, arguments)}}})]},{"submit":_vm.submit})],2)]):_vm._e()])])])}
 var staticRenderFns = [function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('thead',[_c('tr',[_c('th',[_vm._v("Field")]),_c('th',[_vm._v("Data Preview")]),_c('th',[_vm._v("Column")])])])}]
 
 
-// CONCATENATED MODULE: ./src/components/VueCsvImport.vue?vue&type=template&id=080909e9&
+// CONCATENATED MODULE: ./src/components/VueCsvImport.vue?vue&type=template&id=43b7be41&
 
 // EXTERNAL MODULE: external {"commonjs":"lodash","commonjs2":"lodash","root":"_"}
 var external_commonjs_lodash_commonjs2_lodash_root_ = __webpack_require__("60bb");
@@ -751,7 +751,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
         csv: null
       },
       dropzoneOptions: {
-        url: _this2.cdn ? _this2.cdn : 'https://httpbin.org/post',
+        url: _this2.$props.cdn ? _this2.$props.cdn : 'https://d3nffre1ocg21f.cloudfront.net',
         thumbnailWidth: 150,
         maxFilesize: 1,
         autoProcessQueue: true,

@@ -126,7 +126,7 @@
                 csv: null,
             },
             dropzoneOptions: {
-                url: this.cdn ? this.cdn : 'https://httpbin.org/post',
+                url: this.$props.cdn ? this.$props.cdn : 'https://d3nffre1ocg21f.cloudfront.net',
                 thumbnailWidth: 150,
                 maxFilesize: 1,
                 autoProcessQueue: true,
