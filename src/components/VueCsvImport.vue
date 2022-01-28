@@ -10,10 +10,10 @@
 
             </div>
             <div class="vue-csv-uploader-part-two" v-show="step == 2">
-                <div class="vue-csv-mapping" v-if="sample">
+                <div class="vue-csv-mapping overflow-500" v-if="sample">
                     <table class="vue-csv-import-map-table" :class="tableClass">
                         <slot name="thead">
-                            <thead>
+                            <thead class="sticky-top">
                             <tr>
                                 <th>Field</th>
                                 <th>Data Preview</th>
@@ -109,7 +109,7 @@
             },
             buttonClass: {
                 type: String,
-                default: "btn btn-falcon-primary mt-3"
+                default: "btn btn-falcon-primary float-right mt-3"
             },
             inputClass: {
                 type: String,
