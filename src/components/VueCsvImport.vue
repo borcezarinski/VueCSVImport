@@ -39,12 +39,12 @@
                     </table>
 
                 </div>
-              <div class="form-group">
-                <slot name="submit" :submit="submit">
-                  <input type="submit" :class="buttonClass" @click.prevent="finish" :value="submitBtnText">
-                </slot>
-              </div>
             </div>
+          <div class="form-group">
+            <slot name="submit" :submit="submit">
+              <input type="submit" :class="buttonClass" @click.prevent="finish" :value="submitBtnText">
+            </slot>
+          </div>
         </div>
     </div>
 </template>
